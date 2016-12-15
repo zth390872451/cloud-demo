@@ -43,9 +43,9 @@
 
 
         <!-- 健康监控服务 -->
-        <module>eureka-client-admin</module>
+        <module>eureka-admin-server</module>
         <!-- 日志监控服务 -->
-        <module>eureka-client-zipkin</module>
+        <module>eureka-zipkin-server</module>
         <!--<module>test-spring-cloud-sleuth</module>-->
 
     </modules>

@@ -16,7 +16,7 @@
     </parent>-->
 
     <groupId>com.company</groupId>
-    <artifactId>eureka-client-admin</artifactId>
+    <artifactId>eureka-admin-server</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <modelVersion>4.0.0</modelVersion>
