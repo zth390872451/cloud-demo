@@ -140,8 +140,6 @@ B、配置客户端 Config-client
 
 -----------
 ####大牛笔记
->[地址如下](https://git.oschina.net/itmuch/spring-cloud-book)
+>[地址](https://git.oschina.net/itmuch/spring-cloud-book)
 
-
-
-![笔记整理好辛酸.png](http://upload-images.jianshu.io/upload_images/1910783-0d52c0a1744246d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![IMG_0110.JPG](http://upload-images.jianshu.io/upload_images/1910783-ac6f020523473db4.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
