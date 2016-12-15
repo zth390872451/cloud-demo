@@ -1,0 +1,70 @@
+{
+	"id": "81199b8f-02c0-3a51-50e0-5db96efd099b",
+	"name": "test",
+	"description": "",
+	"order": [
+		"18370230-b71e-c660-cc49-b250806af1c2"
+	],
+	"folders": [],
+	"timestamp": 1481702812331,
+	"owner": "118886",
+	"public": false,
+	"requests": [
+		{
+			"id": "18370230-b71e-c660-cc49-b250806af1c2",
+			"headers": "",
+			"url": "http://127.0.0.1:3000/api/oauth2/accessTokenByPwd",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "81199b8f-02c0-3a51-50e0-5db96efd099b",
+			"data": [
+				{
+					"key": "username",
+					"value": "15019271281",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "grant_type",
+					"value": "password",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "password",
+					"value": "e10adc3949ba59abbe56e057f20f883e",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "client_id",
+					"value": "wherecom_k1_tinytrackv3_api_ios",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				},
+				{
+					"key": "client_secret",
+					"value": "dspou55tn6fxkkmve7z8elo9fxyyj6x5",
+					"type": "text",
+					"enabled": true,
+					"warning": ""
+				}
+			],
+			"dataMode": "params",
+			"name": "http://127.0.0.1:3000/api/oauth2/accessTokenByPwd",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1481702812327,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}

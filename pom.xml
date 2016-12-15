@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.company</groupId>
+    <artifactId>spring-cloud-config-example</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <!--网关模块，主要负责获取访问凭证、校验、路由等-->
+        <module>api-gateway</module>
+
+        <!--配置服务器-->
+        <module>config-server</module>
+        <!--注册中心(可配置多台，高可用)-->
+        <module>eureka-server</module>
+
+        <!--通用模块依赖-->
+        <module>common-module</module>
+        <!--异常处理机制-->
+        <module>common-exception-handler</module>
+
+        <!--Spring Security OAuth2 认证服务-->
+        <module>eureka-oauth2-server</module>
+
+        <!-- 普通服务(集群节点1）：add 计算  -->
+        <module>compute-service-node-one</module>
+        <!-- 普通服务(集群节点2)：add 计算  -->
+        <module>compute-service-node-two</module>
+
+        <!-- 下面的 ${name}-client-node-one 都是集群的服务节点，只是里头使用了不同的形式(技术)-->
+
+        <!--简单的Eureka客户端节点-->
+        <module>eureka-client-node-one</module>
+        <!--Ribbon客户端节点-->
+        <module>eureka-client-node-two</module>
+        <!--Feign形式客户端节点-->
+        <module>eureka-client-node-three</module>
+
+
+
+        <!-- 健康监控服务 -->
+        <module>eureka-client-admin</module>
+        <!-- 日志监控服务 -->
+        <module>eureka-client-zipkin</module>
+        <!--<module>test-spring-cloud-sleuth</module>-->
+
+    </modules>
+
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.4.0.RELEASE</version>
+    </parent>
+
+    <dependencies>
+        <!-- 日志：traceId and spanId 将在http请求间传递-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+        </dependency>
+
+        <!-- 客户端需要 RestTemplate 请求中注入追踪信息并把相关信息发送到Zipkin Server-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-sleuth-zipkin</artifactId>
+        </dependency>
+
+        <!--简化 对象的 set和get等方法 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <!--热加载-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>springloaded</artifactId>
+            <version>1.2.3.RELEASE</version>
+        </dependency>
+
+    </dependencies>
+
+
+    <dependencyManagement>
+        <!--版本管理，子模块所有与之相关的依赖如果没指定版本则使用父模块默认的，如果指定了，子模板优先-->
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <!--版本名字均为 地名如: Brixton :布里克斯顿-->
+                <version>Camden.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+<!--
+
+    &lt;!&ndash;私服地址&ndash;&gt;
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <name>Team Nexus Repository</name>
+            <url>http://115.159.184.85:8081/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+    &lt;!&ndash;私服插件&ndash;&gt;
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus</id>
+            <name>Team Nexus Repository</name>
+            <url>http://115.159.184.85:8081/nexus/content/groups/public</url>
+        </pluginRepository>
+    </pluginRepositories>
+-->
+
+</project>
