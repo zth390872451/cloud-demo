@@ -60,3 +60,4 @@ eureka:
 Eureka配置最佳实践总结
 https://github.com/spring-cloud/spring-cloud-netflix/issues/203
 
+http://www.itmuch.com/
