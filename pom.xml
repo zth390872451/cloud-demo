@@ -11,41 +11,43 @@
 
     <modules>
         <!--网关模块，主要负责获取访问凭证、校验、路由等-->
-        <module>api-gateway</module>
+        <module>api_gateway</module>
 
         <!--配置服务器-->
-        <module>config-server</module>
+        <module>config_server</module>
         <!--注册中心(可配置多台，高可用)-->
-        <module>eureka-server</module>
+        <module>eureka_server</module>
 
         <!--通用模块依赖-->
-        <module>common-module</module>
+        <module>common_module</module>
         <!--异常处理机制-->
         <module>common-exception-handler</module>
 
         <!--Spring Security OAuth2 认证服务-->
-        <module>eureka-oauth2-server</module>
+        <module>eureka_oauth2_server</module>
 
         <!-- 普通服务(集群节点1）：add 计算  -->
-        <module>compute-service-node-one</module>
+        <module>compute_service_node_one</module>
         <!-- 普通服务(集群节点2)：add 计算  -->
-        <module>compute-service-node-two</module>
+        <module>compute_service_node_two</module>
+        <!-- 普通服务(集群节点3)：add 计算  -->
+        <module>compute_service_node_three</module>
 
         <!-- 下面的 ${name}-client-node-one 都是集群的服务节点，只是里头使用了不同的形式(技术)-->
 
         <!--简单的Eureka客户端节点-->
-        <module>eureka-client-node-one</module>
+        <module>eureka_client_node_one</module>
         <!--Ribbon客户端节点-->
-        <module>eureka-client-node-two</module>
+        <module>eureka_client_node_two</module>
         <!--Feign形式客户端节点-->
-        <module>eureka-client-node-three</module>
+        <module>eureka_client_node_three</module>
 
 
 
         <!-- 健康监控服务 -->
-        <module>eureka-admin-server</module>
+        <module>eureka_admin_server</module>
         <!-- 日志监控服务 -->
-        <module>eureka-zipkin-server</module>
+        <module>eureka_zipkin_server</module>
         <!--<module>test-spring-cloud-sleuth</module>-->
 
     </modules>
@@ -108,24 +110,24 @@
             </plugin>
         </plugins>
     </build>
-<!--
+    <!--
 
-    &lt;!&ndash;私服地址&ndash;&gt;
-    <repositories>
-        <repository>
-            <id>nexus</id>
-            <name>Team Nexus Repository</name>
-            <url>http://115.159.184.85:8081/nexus/content/groups/public</url>
-        </repository>
-    </repositories>
-    &lt;!&ndash;私服插件&ndash;&gt;
-    <pluginRepositories>
-        <pluginRepository>
-            <id>nexus</id>
-            <name>Team Nexus Repository</name>
-            <url>http://115.159.184.85:8081/nexus/content/groups/public</url>
-        </pluginRepository>
-    </pluginRepositories>
--->
+        &lt;!&ndash;私服地址&ndash;&gt;
+        <repositories>
+            <repository>
+                <id>nexus</id>
+                <name>Team Nexus Repository</name>
+                <url>http://115.159.184.85:8081/nexus/content/groups/public</url>
+            </repository>
+        </repositories>
+        &lt;!&ndash;私服插件&ndash;&gt;
+        <pluginRepositories>
+            <pluginRepository>
+                <id>nexus</id>
+                <name>Team Nexus Repository</name>
+                <url>http://115.159.184.85:8081/nexus/content/groups/public</url>
+            </pluginRepository>
+        </pluginRepositories>
+    -->
 
 </project>
