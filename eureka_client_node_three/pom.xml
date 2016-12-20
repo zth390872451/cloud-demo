@@ -20,7 +20,7 @@
 
 		<dependency>
 			<groupId>com.company</groupId>
-			<artifactId>common-module</artifactId>
+			<artifactId>common_module</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		<!--在实际工作过程中，重试是一个经常使用的手段。比如MQ发送消息失败，会采取重试手段，
