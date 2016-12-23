@@ -1,0 +1,32 @@
+##-- \u670D\u52A1\u6CE8\u518C\u4E2D\u5FC3\u5730\u5740 (\u5C06\u7F51\u5173\u5C42\u6CE8\u518C\u6210\u4E3A\u670D\u52A1\uFF09
+##-- \u7F51\u5173\u5C42\u4E5F\u53EF\u4EE5\u4E0D\u5C06\u81EA\u8EAB\u6CE8\u518C\u6210\u4E3A\u670D\u52A1 \u53C2\u8003\uFF1Ahttp://git.oschina.net/itmuch/spring-cloud-book/blob/master/2%20Spring%20Cloud/2.6%20API%20Gateway.md?dir=0&filepath=2+Spring+Cloud%2F2.6+API+Gateway.md&oid=95a73be51419a7e6d6f0491e3fa5d6a60b51cf9c&sha=fd805fc4af94a7fbe18efbb547b47db082fc11d4
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://127.0.0.1:1000/eureka/
+##-- \u8DEF\u7531\u89C4\u5219\u8BBE\u7F6E
+zuul:
+    routes:
+        api-a:
+            path: /api-add/**
+            serviceId: eureka_client_node
+        api-b:
+            path: /api-test/**
+            serviceId: feign_client
+        api-c:
+            path: /eureka_oauth2_server/**
+            serviceId: eureka_oauth2_server
+
+#
+#zuul:
+#  ignored-services: "*"
+#  routes:
+#    product:
+#      path: /product/**
+#      url: http://product:9001/product
+#    recommend:
+#      path: /recommend/**
+#      url: http://recommend:9002/recommend
+#    review:
+#      path: /review/**
+#      url: http://review:9003/review

@@ -1,6 +1,8 @@
 package com.company.web.controller.conf;
 
 import com.company.web.controller.fileter.Oauth2Interceptor;
+import org.springframework.cloud.netflix.zuul.filters.pre.DebugFilter;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -13,9 +15,8 @@ public class InterceptorRegisterConfiguration extends WebMvcConfigurerAdapter{
 	
 	@Override
     public void addInterceptors(InterceptorRegistry registry) {
-        //match .json api version
 		registry.addInterceptor(new Oauth2Interceptor())
-    	.excludePathPatterns("/api/oauth2/**");
+    	.excludePathPatterns("/api/oauth2/accessTokenByPwd");
 
     }
 	
@@ -24,5 +25,9 @@ public class InterceptorRegisterConfiguration extends WebMvcConfigurerAdapter{
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
             registry.addResourceHandler("/resources/**")
                     .addResourceLocations("/resources/");
+    }
+    @Bean
+    public DebugFilter debugFilter() {
+        return new DebugFilter();
     }
 }

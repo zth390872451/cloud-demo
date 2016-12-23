@@ -6,6 +6,7 @@ import com.netflix.zuul.context.RequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.cloud.security.oauth2.proxy.OAuth2TokenRelayFilter;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -71,7 +72,7 @@ public class AccessFilter extends ZuulFilter {
         log.info(String.format("%s request to %s", request.getMethod(), request.getRequestURL().toString()));
 
         Object accessToken = request.getParameter("access_token");
-        if (accessToken == null) {
+         if (accessToken == null) {
             log.warn("access token is empty");
             ctx.setSendZuulResponse(false);//zuul过滤该请求，不对其进行路由
             ctx.setResponseStatusCode(401);//无权访问
@@ -79,9 +80,8 @@ public class AccessFilter extends ZuulFilter {
         }else {
 //            String username
 //            Object o = StoreMemory.tokenStorage.get(accessToken);
-
-
         }
+//        OAuth2TokenRelayFilter
         log.info("access token ok");
         return null;
     }

@@ -18,3 +18,5 @@ ZuulFilter 过滤器 与 OAuth2Interceptor 拦截器
 当配置了路由时，
 处理逻辑：只有 ZuulFilter 处理
 
+拦截器+ZuulFilter
+需注意事项 参考：http://stackoverflow.com/questions/39801282/handlerinterceptoradapter-and-zuul-filter
