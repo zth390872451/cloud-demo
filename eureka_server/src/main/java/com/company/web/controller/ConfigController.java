@@ -20,7 +20,6 @@ public class ConfigController {
         this.configName = configName;
     }
 
-
     @RequestMapping("/configName")
     public String getConfig(){
         return this.configName;
