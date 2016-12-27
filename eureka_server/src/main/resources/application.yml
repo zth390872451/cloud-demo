@@ -1,0 +1,18 @@
+eureka:
+    client:
+        fetch-registry: false
+        register-with-eureka: false
+        serviceUrl:
+            defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    instance:
+        hostname: localhost
+        lease-expiration-duration-in-seconds: 10
+    server:
+        enable-self-preservation: false
+server:
+    port: 1000
+spring:
+    application:
+        name: eureka-server
+    zipkin:
+        base-url: http://127.0.0.1:9411/

@@ -1,0 +1,34 @@
+endpoints:
+    health:
+        sensitive: false
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:1000/eureka/
+server:
+    port: 8090
+spring:
+    application:
+        name: eureka-admin-server
+    boot:
+        admin:
+            notify:
+                mail:
+                    to: 617966855@qq.com
+            url: http://localhost:${server.port}
+    jackson:
+        serialization:
+            indent_output: true
+    mail:
+        host: smtp.qq.com
+        password: vqvufublassxbjic
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    starttls:
+                        enable: true
+                        required: true
+        username: 390872451@qq.com
+    zipkin:
+        base-url: http://zipkin-server:9411/
